@@ -4,6 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yogeshkohli.personalbook.HelpActivity">
+    tools:context="com.example.yogeshkohli.personalbook.HelpActivity"
+    tools:layout_editor_absoluteY="25dp">
 
+    <TextView
+        android:id="@+id/textViewHelpHeading"
+        android:layout_width="303dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginTop="34dp"
+        android:text="Help"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewContactLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewContactLabel"
+        android:layout_width="309dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="24dp"
+        android:text="Contact:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/textViewEmailLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHelpHeading" />
+
+    <TextView
+        android:id="@+id/textViewEmailLabel"
+        android:layout_width="338dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="243dp"
+        android:text="yogesh22kohli@gmail.com"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMessageLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContactLabel" />
+
+    <TextView
+        android:id="@+id/textViewMessageLabel"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:text="Please write an email and will try to get back to you as soon as possible. Any suggestions are most welcome."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmailLabel" />
 </android.support.constraint.ConstraintLayout>

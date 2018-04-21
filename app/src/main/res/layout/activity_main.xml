@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.yogeshkohli.personalbook.MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/textViewPersonalBook"
@@ -28,34 +28,31 @@
         android:id="@+id/textViewByName"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="265dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:text="@string/by_yogesh_kohli"
         android:textAlignment="center"
         android:textSize="21sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGetStarted"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPersonalBook" />
 
     <Button
         android:id="@+id/buttonGetStarted"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="307dp"
+        android:layout_height="60dp"
+
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginStart="23dp"
-        android:onClick="getStartedButtonClicked"
         android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="getStartedButtonClicked"
         android:text="@string/get_started_title"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewByName" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

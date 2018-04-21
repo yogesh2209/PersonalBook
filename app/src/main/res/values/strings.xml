@@ -4,5 +4,5 @@
     <string name="by_yogesh_kohli">By\nYogesh Kohli</string>
     <string name="get_started_title">Continue as Guest</string>
     <string name="about_personal_book">About Personal Book</string>
-    <string name="textviewAboutDetailsString">TextView</string>
+    <string name="textviewAboutDetailsString"></string>
 </resources>

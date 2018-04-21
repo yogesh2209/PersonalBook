@@ -16,11 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NotesList.NotesListActivity" />
-        <activity android:name=".NotesListActivity" />
         <activity android:name=".ContactDeveloperActivity" />
         <activity android:name=".AboutAppActivity" />
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>
