@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PersonalBook</string>
+    <string name="personal_book_title">Personal Book</string>
+    <string name="by_yogesh_kohli">By\nYogesh Kohli</string>
+    <string name="get_started_title">Continue as Guest</string>
+</resources>
