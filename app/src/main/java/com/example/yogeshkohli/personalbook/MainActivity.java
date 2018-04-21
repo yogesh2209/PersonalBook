@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Get Started Button Action
     public void getStartedButtonClicked(View button) {
-        Intent i = new Intent(this, NotesListActivity.class);
+        Intent i = new Intent(this, ThingsToDoActivity.class);
         startActivity(i);
     }
 }

@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".NotesList.NotesListActivity" />
-        <activity android:name=".NotesListActivity"></activity>
+        <activity android:name=".NotesListActivity" />
+        <activity android:name=".ContactDeveloperActivity" />
+        <activity android:name=".AboutAppActivity" />
+        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>
