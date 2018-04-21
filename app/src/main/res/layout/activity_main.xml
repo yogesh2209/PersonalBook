@@ -11,10 +11,10 @@
         android:id="@+id/textViewPersonalBook"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginEnd="19dp"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:text="@string/personal_book_title"
         android:textAlignment="center"
         android:textSize="42sp"
@@ -28,7 +28,7 @@
         android:id="@+id/textViewByName"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="265dp"
+        android:layout_marginBottom="281dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:text="@string/by_yogesh_kohli"
@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/buttonGetStarted"
-        android:layout_width="307dp"
+        android:layout_width="308dp"
         android:layout_height="60dp"
 
         android:layout_marginBottom="16dp"

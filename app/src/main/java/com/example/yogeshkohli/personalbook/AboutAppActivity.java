@@ -15,6 +15,6 @@ public class AboutAppActivity extends AppCompatActivity {
 
     public void setAboutText() {
         TextView myAwesomeTextView = (TextView)findViewById(R.id.textViewAboutDetails);
-        myAwesomeTextView.setText("This application is developed as a final project for Android development Class (Computer Science Department) which comes under Extended Studies - San Diego State University.\n\nThis app aims to provide a seamless experience in which user can create his/her personal notes.\n\nFEATURES:\n\n1. Create customised notes.\n2. Make them password protected.\n3. Edit / Update / Delete Notes.\n\n");
+        myAwesomeTextView.setText(R.string.aboutAppMessage);
     }
 }

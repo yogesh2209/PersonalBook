@@ -19,7 +19,8 @@
         <activity android:name=".ContactDeveloperActivity" />
         <activity android:name=".AboutAppActivity" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".NewNoteOptionsActivity"></activity>
     </application>
 
 </manifest>

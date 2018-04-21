@@ -4,6 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yogeshkohli.personalbook.ContactDeveloperActivity">
+    tools:context="com.example.yogeshkohli.personalbook.ContactDeveloperActivity"
+    tools:layout_editor_absoluteY="25dp">
 
+    <TextView
+        android:id="@+id/textViewDevName"
+        android:layout_width="374dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="59dp"
+        android:layout_marginTop="167dp"
+        android:text="@string/textviewDevNameString"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="28sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDevPhone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDevEmail"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/textviewDevEmail"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_shadow_start_color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAboutDevTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewDevName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewDevPhone"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:text="@string/textviewDevPhoneString"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_shadow_start_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAboutDevTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDevName" />
+
+    <TextView
+        android:id="@+id/textViewAboutDevTitle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/textviewAboutDevHeading"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAboutDevDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDevPhone" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kohli" />
+
+    <TextView
+        android:id="@+id/textViewAboutDevDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
+        android:autoLink="web"
+        android:text="@string/textviewAboutDevMessage"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutDevTitle" />
 </android.support.constraint.ConstraintLayout>
