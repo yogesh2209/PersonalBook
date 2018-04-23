@@ -9,32 +9,50 @@
 
     <EditText
         android:id="@+id/editTextTitle"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Chapter Name"
+        android:hint="Chapter Name*"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="30dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextContentChapter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSetReminder"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginBottom="111dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:text="SET REMINDER"
+        android:onClick="setReminderButtonClicked"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSaveNoteText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="334dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextContentChapter" />
 
     <EditText
         android:id="@+id/editTextContentChapter"
-        android:layout_width="345dp"
-        android:layout_height="133dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="98dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
         android:ems="10"
-        android:hint="Content here"
+        android:hint="Content here*"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="103dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonSetReminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -42,19 +60,26 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonSaveNoteText"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="Button"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:text="SAVE"
+        android:onClick="saveNoteTextTypeButtonClicked"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="493dp" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSetReminder" />
 
 </android.support.constraint.ConstraintLayout>
