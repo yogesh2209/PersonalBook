@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "824749052505",
+    "firebase_url": "https://personalbook-81845.firebaseio.com",
+    "project_id": "personalbook-81845",
+    "storage_bucket": "personalbook-81845.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824749052505:android:2e37324d4cf180ad",
+        "android_client_info": {
+          "package_name": "com.example.yogeshkohli.personalbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824749052505-eqggfhdl0ba02qqprgge57mck1o9832j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiQDfY7O_ali3hfs-G3JtIAiDZY2-ftMM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
