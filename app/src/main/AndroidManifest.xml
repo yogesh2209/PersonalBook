@@ -23,7 +23,8 @@
         <activity android:name=".NewNoteOptionsActivity" />
         <activity android:name=".NoteTypeTextActivity" />
         <activity android:name=".NoteTypeDrawActivity" />
-        <activity android:name=".NoteTypeAudioActivity"></activity>
+        <activity android:name=".NoteTypeAudioActivity" />
+        <activity android:name=".DrawingActivity"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

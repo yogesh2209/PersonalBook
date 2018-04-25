@@ -4,6 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yogeshkohli.personalbook.NoteTypeDrawActivity">
+    tools:context="com.example.yogeshkohli.personalbook.NoteTypeDrawActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <Button
+        android:id="@+id/buttonDrawingViewOpen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="drawButtonClicked"
+        android:text="@string/drawBtnString"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSetReminderDraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordDraw" />
+
+    <EditText
+        android:id="@+id/editTextTitleDraw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/chapter_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPasswordDraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSetReminderDraw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="58dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="setReminderButtonClicked"
+        android:text="@string/set_reminderDrawNoteScreen"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDrawNoteMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDrawingViewOpen" />
+
+
+    <EditText
+        android:id="@+id/editTextPasswordDraw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/passwordDrawNoteScreen"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDrawingViewOpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitleDraw" />
+
+    <Button
+        android:id="@+id/buttonSaveNoteDraw"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="saveNoteDrawTypeButtonClicked"
+        android:text="@string/saveDrawNote"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDrawNoteMessage" />
+
+    <TextView
+        android:id="@+id/textViewDrawNoteMessage"
+        android:layout_width="331dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/textviewMsgDrawNote"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSaveNoteDraw"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSetReminderDraw" />
+
 
 </android.support.constraint.ConstraintLayout>

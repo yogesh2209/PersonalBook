@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
                     switch(finalI){
 
                         case 0:
-
+                            fireIntent(new NewNoteOptionsActivity());
                             break;
 
                         case 1:
