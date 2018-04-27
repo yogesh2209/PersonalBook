@@ -27,4 +27,6 @@
         <activity android:name=".DrawingActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 </manifest>

@@ -2,6 +2,7 @@ package com.example.yogeshkohli.personalbook;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class NoteTypeTextActivity extends AppCompatActivity {
 
@@ -89,20 +91,27 @@ public class NoteTypeTextActivity extends AppCompatActivity {
     public void showToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+    public Date getCurrentDateTime() {
+        return Calendar.getInstance().getTime();
+    }
 
     //set reminder Button Action
     public void setReminderButtonClicked(View button) {
-      //Open time dialog picker
-        TimePickerDialog timePickerDialog = new TimePickerDialog(NoteTypeTextActivity.this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                startHour = hourOfDay;
-                startMinute = minute;
-                //change title of button
-                Button buttonReminderTime = (Button) findViewById(R.id.buttonSetReminder);
-                buttonReminderTime.setText("Set time " + displayTime(startHour, startMinute));
-            }
-        } , getCurrentHour(), getCurrentMinute(), true);
-        timePickerDialog.show();
+
+        if (getEditTextTitle().length() == 0 || getEditTextNoteContent().length() == 0) {
+            showToast(Constants.EMPTY_EDIT_TEXT);
+            return;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_EDIT);
+        intent.setType("vnd.android.cursor.item/event");
+        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, getCurrentDateTime());
+        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,getCurrentDateTime());
+        intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+        intent.putExtra(CalendarContract.Events.TITLE, getEditTextTitle());
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, getEditTextNoteContent());
+        intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Home");
+        intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");
+        startActivity(intent);
     }
 }
