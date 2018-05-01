@@ -29,4 +29,9 @@
     <string name="textviewPswdNoteDetail">TextView</string>
     <string name="textviewNoteTypeNoteDetail">TextView</string>
     <string name="editButtonNoteDetail">Edit</string>
+    <string name="chapter_name_edit_screen">Chapter Name*</string>
+    <string name="set_reminder_edit_screen">SET REMINDER</string>
+    <string name="password_edit_screen">Password</string>
+    <string name="update_edit_screen">UPDATE</string>
+    <string name="content_here_edit_screen">Content here</string>
 </resources>

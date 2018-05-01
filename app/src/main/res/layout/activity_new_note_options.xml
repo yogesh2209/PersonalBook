@@ -8,28 +8,10 @@
     tools:layout_editor_absoluteY="25dp">
 
     <Button
-        android:id="@+id/buttonAudio"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="230dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginStart="42dp"
-        android:background="@drawable/button_bg_rounded_corners"
-        android:onClick="noteOptionAudioButtonClicked"
-        android:text="AUDIO"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDrawing" />
-
-    <Button
         android:id="@+id/buttonDrawing"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="315dp"
         android:layout_marginEnd="42dp"
         android:layout_marginStart="42dp"
         android:background="@drawable/button_bg_rounded_corners"
@@ -38,7 +20,7 @@
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAudio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonText" />

@@ -31,6 +31,18 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
 
     public void editNoteButtonClicked(View button) {
         //Take him to editing screen
+       fireIntent();
+    }
+
+    //Intent method
+    public void fireIntent() {
+        Intent i = new Intent(this, NoteEditScreenActivity.class);
+        i.putExtra("password", getPasswordFromPreviousScreen());
+        i.putExtra("noteId", getNoteIdFromPreviousScreen());
+        i.putExtra("chapterName", getChapterNameFromPreviousScreen());
+        i.putExtra("content", getChapterContentFromPreviousScreen());
+        i.putExtra("type", getNoteTypeFromPreviousScreen());
+        startActivity(i);
     }
 
     //Calling all set methods here
@@ -66,7 +78,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
     }
 
     public void setPasswordField(String passwordField){
-        if (passwordField != null) {
+        if (!passwordField.matches("")) {
             TextView passwordFieldTextView = (TextView)findViewById(R.id.textViewPasswordenabledNoteDetailScreen);
             passwordFieldTextView.setText("Password: " + passwordField);
         }

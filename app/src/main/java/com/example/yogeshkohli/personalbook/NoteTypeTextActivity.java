@@ -71,7 +71,7 @@ public class NoteTypeTextActivity extends AppCompatActivity {
         writeNewNote(getEditTextTitle(), getEditTextNoteContent(), "Text", getNoteId(), getEditTextPassword(), getCurrentDateTime());
     }
 
-    protected String getNoteId() {
+    public String getNoteId() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
@@ -81,7 +81,6 @@ public class NoteTypeTextActivity extends AppCompatActivity {
         }
         String saltStr = salt.toString();
         return saltStr;
-
     }
 
     public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
