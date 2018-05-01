@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yogeshkohli.personalbook">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,9 +28,11 @@
         <activity android:name=".NoteTypeTextActivity" />
         <activity android:name=".NoteTypeDrawActivity" />
         <activity android:name=".NoteTypeAudioActivity" />
-        <activity android:name=".DrawingActivity"></activity>
+        <activity android:name=".DrawingActivity" />
+        <activity android:name=".NotesListActivity" />
+        <activity android:name=".PasswordEnterActivity" />
+        <activity android:name=".NoteDetailsScreenActivity" />
+        <activity android:name=".NoteEditScreenActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
 </manifest>

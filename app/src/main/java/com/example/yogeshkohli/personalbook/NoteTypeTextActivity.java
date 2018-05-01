@@ -2,14 +2,19 @@ package com.example.yogeshkohli.personalbook;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -63,7 +68,7 @@ public class NoteTypeTextActivity extends AppCompatActivity {
 
         chapterNames.add(getEditTextTitle());
         storeDataInSharedPreferences(buildArrayString(chapterNames));
-        writeNewNote(getEditTextTitle(), getEditTextNoteContent(), "Text", getNoteId(), getEditTextPassword());
+        writeNewNote(getEditTextTitle(), getEditTextNoteContent(), "Text", getNoteId(), getEditTextPassword(), getCurrentDateTime());
     }
 
     protected String getNoteId() {
@@ -79,10 +84,17 @@ public class NoteTypeTextActivity extends AppCompatActivity {
 
     }
 
-    public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password) {
-        Note note = new Note(chapterName, noteContent, noteType, noteID, password);
+    public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
+        Note note = new Note(chapterName, noteContent, noteType, noteID, password, currentDate);
         mDatabase.child("notes").child(noteID).setValue(note);
         showToast(Constants.DATA_SAVED);
+        fireIntent();
+    }
+
+    public void fireIntent(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
     }
 
     /* -------- GET EDIT TEXT VALUE METHODS -------------*/
@@ -109,36 +121,16 @@ public class NoteTypeTextActivity extends AppCompatActivity {
         titleEditText.requestFocus();
     }
 
-    //get time
-    public String getTime(int hour, int min){
-        return (String.valueOf(hour) + String.valueOf(min));
-    }
-    //display time
-    public String displayTime(int hour, int min){
-        return (String.valueOf(hour) + " : " +  String.valueOf(min));
-    }
-
-    //Getting current time
-    public Calendar getCurrentTime(){
-        return Calendar.getInstance();
-    }
-
-    //Getting current hour
-    public int getCurrentHour(){
-        return getCurrentTime().get(Calendar.HOUR_OF_DAY);
-    }
-
-    //Getting current minute
-    public int getCurrentMinute(){
-        return getCurrentTime().get(Calendar.MINUTE);
-    }
-
     //Show toast
     public void showToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-    public Date getCurrentDateTime() {
-        return Calendar.getInstance().getTime();
+
+    public String getCurrentDateTime() {
+        ZoneId zoneId = ZoneId.of("America/Los_Angeles");
+        LocalDateTime localTime= LocalDateTime.now(zoneId);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        return localTime.format(formatter);
     }
 
     //set reminder Button Action

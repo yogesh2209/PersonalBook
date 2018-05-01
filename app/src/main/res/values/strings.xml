@@ -22,4 +22,11 @@
     <string name="set_reminderDrawNoteScreen">SET REMINDER</string>
     <string name="saveDrawNote">SAVE</string>
     <string name="textviewMsgDrawNote">You cannot edit Drawing but you can save your drawing on external storage i.e SD card (if you have). You can aso edit chapter name see the type of chapter and when it is created.</string>
+    <string name="your_notes_heading">Your Notes</string>
+    <string name="chapterNoteDetail">Chapter</string>
+    <string name="textviewContentNoteDetai">TextView</string>
+    <string name="textviewDateNoteDetail">TextView</string>
+    <string name="textviewPswdNoteDetail">TextView</string>
+    <string name="textviewNoteTypeNoteDetail">TextView</string>
+    <string name="editButtonNoteDetail">Edit</string>
 </resources>

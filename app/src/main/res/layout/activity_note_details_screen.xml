@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yogeshkohli.personalbook.NoteDetailsScreenActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textViewChapterNameNoteDetaiScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/chapterNoteDetail"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/textViewChapterContentNoteDetaiScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewChapterContentNoteDetaiScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/textviewContentNoteDetai"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDateNoteDetailScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewChapterNameNoteDetaiScreen" />
+
+    <TextView
+        android:id="@+id/textViewDateNoteDetailScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="22dp"
+        android:text="@string/textviewDateNoteDetail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPasswordenabledNoteDetailScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewChapterContentNoteDetaiScreen" />
+
+    <TextView
+        android:id="@+id/textViewPasswordenabledNoteDetailScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="21dp"
+        android:text="@string/textviewPswdNoteDetail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewNoteTypeNoteDetailScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDateNoteDetailScreen" />
+
+    <Button
+        android:id="@+id/buttonNoteDetailEditScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="editNoteButtonClicked"
+        android:text="@string/editButtonNoteDetail"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNoteTypeNoteDetailScreen" />
+
+    <TextView
+        android:id="@+id/textViewNoteTypeNoteDetailScreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="73dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:text="@string/textviewNoteTypeNoteDetail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNoteDetailEditScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPasswordenabledNoteDetailScreen" />
+</android.support.constraint.ConstraintLayout>

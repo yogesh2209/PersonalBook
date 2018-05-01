@@ -15,6 +15,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -70,8 +73,11 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
     public void showToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-    public Date getCurrentDateTime() {
-        return Calendar.getInstance().getTime();
+    public String getCurrentDateTime() {
+        ZoneId zoneId = ZoneId.of("America/Los_Angeles");
+        LocalDateTime localTime= LocalDateTime.now(zoneId);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+        return localTime.format(formatter);
     }
 
     //set reminder Button Action
@@ -115,7 +121,7 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
 
         chapterNames.add(getEditTextTitle());
         storeDataInSharedPreferences(buildArrayString(chapterNames));
-        writeNewNote(getEditTextTitle(), "", "Draw", getNoteId(), getEditTextPassword());
+        writeNewNote(getEditTextTitle(), "", "Draw", getNoteId(), getEditTextPassword(), getCurrentDateTime());
     }
 
     protected String getNoteId() {
@@ -131,10 +137,17 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
 
     }
 
-    public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password) {
-        Note note = new Note(chapterName, noteContent, noteType, noteID, password);
+    public void fireIntent(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
+    }
+
+    public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
+        Note note = new Note(chapterName, noteContent, noteType, noteID, password, currentDate);
         mDatabase.child("notes").child(noteID).setValue(note);
         showToast(Constants.DATA_SAVED);
+        fireIntent();
     }
 
     //storing data in shared preferences
