@@ -53,6 +53,11 @@ public class NotesListActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         //Get map of users in datasnapshot
                         snapshotFirebaseData = (Map) dataSnapshot.getValue();
+
+                        if (snapshotFirebaseData == null) {
+                            return;
+                        }
+
                         for (Map.Entry<String,Object> entry : snapshotFirebaseData.entrySet()) {
                             System.out.printf("Key is %s -> %s%n", entry.getKey(), entry.getValue());
                             Map<String, String> mapRow = (Map) entry.getValue();

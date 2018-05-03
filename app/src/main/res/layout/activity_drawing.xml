@@ -25,51 +25,66 @@ tools:context="com.example.yogeshkohli.personalbook.DrawingActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <Button
             android:id="@+id/save_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/button_bg_rounded_corners"
             android:text="Save Image"
-            />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <Button
             android:id="@+id/eraser_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/button_bg_rounded_corners"
             android:text="Eraser"
-            />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/background_color_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/button_bg_rounded_corners"
             android:text="Background Color"
-            />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <Button
             android:id="@+id/pen_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/button_bg_rounded_corners"
             android:text="Pen"
-            />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/pen_color_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/button_bg_rounded_corners"
             android:text="Pen Color"
-            />
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>
 <LinearLayout
