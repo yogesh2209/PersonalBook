@@ -73,6 +73,7 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
     public void showToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+    //get current date time
     public String getCurrentDateTime() {
         ZoneId zoneId = ZoneId.of("America/Los_Angeles");
         LocalDateTime localTime= LocalDateTime.now(zoneId);
@@ -98,15 +99,17 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
         intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");
         startActivity(intent);
     }
+    //draw button action
     public void drawButtonClicked(View button) {
         Intent i = new Intent(this, DrawingActivity.class);
         startActivity(i);
 
     }
+    //save button action
     public void saveNoteDrawTypeButtonClicked(View button) {
         validateForm();
     }
-
+    //validating form
     public void validateForm(){
         if (getEditTextTitle().length() == 0){
             showToast(Constants.EMPTY_EDIT_TEXT);
@@ -124,6 +127,7 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
         writeNewNote(getEditTextTitle(), "", "Draw", getNoteId(), getEditTextPassword(), getCurrentDateTime());
     }
 
+    //generate random note id
     protected String getNoteId() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
@@ -137,12 +141,14 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
 
     }
 
+    //take back to home without creating new instance of it
     public void fireIntent(){
         Intent intent = new Intent(this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
+    //writing new data to firebase
     public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
         Note note = new Note(chapterName, noteContent, noteType, noteID, password, currentDate);
         mDatabase.child("notes").child(noteID).setValue(note);
@@ -160,6 +166,7 @@ public class NoteTypeDrawActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    //building arrayString with comma separated.
     public StringBuilder buildArrayString(ArrayList<String> chapters) {
         StringBuilder stringBuilder = new StringBuilder();
         for (String chapter : chapters) {

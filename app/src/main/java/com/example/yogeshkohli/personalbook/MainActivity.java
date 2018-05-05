@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //Get Started Button Action
+    //Get Started / continue as guest Button Action
     public void getStartedButtonClicked(View button) {
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);

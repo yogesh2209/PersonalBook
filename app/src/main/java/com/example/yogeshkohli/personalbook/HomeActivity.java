@@ -35,11 +35,13 @@ public class HomeActivity extends AppCompatActivity {
         setupGridView();
     }
 
+    //setting up grid view
     public void setupGridView(){
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         //Set Click Event
         setClickEvent(mainGrid);
     }
+
     //Handle click on grid cells
     private void setClickEvent(GridLayout mainGrid) {
         //Loop all child item of Main Grid
@@ -54,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
                     switch(finalI){
 
                         case 0:
+                            //New note
                             fireIntent(new NewNoteOptionsActivity());
                             break;
 
@@ -70,14 +73,17 @@ public class HomeActivity extends AppCompatActivity {
                             break;
 
                         case 3:
+                            //About app
                             fireIntent(new AboutAppActivity());
                             break;
 
                         case 4:
+                            //contact developer - about developer also
                             fireIntent(new ContactDeveloperActivity());
                             break;
 
                         case 5:
+                            //help - email developer if you have any queries
                             fireIntent(new HelpActivity());
                             break;
                     }
@@ -101,6 +107,4 @@ public class HomeActivity extends AppCompatActivity {
         editor.putString("indicator",indicator);
         editor.apply();
     }
-
-
 }

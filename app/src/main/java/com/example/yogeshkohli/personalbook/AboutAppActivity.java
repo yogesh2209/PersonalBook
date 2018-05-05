@@ -13,6 +13,7 @@ public class AboutAppActivity extends AppCompatActivity {
         setAboutText();
     }
 
+    //setting about text function here
     public void setAboutText() {
         TextView myAwesomeTextView = (TextView)findViewById(R.id.textViewAboutDetails);
         myAwesomeTextView.setText(R.string.aboutAppMessage);

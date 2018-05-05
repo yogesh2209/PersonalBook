@@ -24,11 +24,5 @@ public class NewNoteOptionsActivity extends AppCompatActivity {
         Intent i = new Intent(this, NoteTypeDrawActivity.class);
         startActivity(i);
     }
-
-    //Note type Audio Button Action
-    public void noteOptionAudioButtonClicked(View button) {
-        Intent i = new Intent(this, NoteTypeAudioActivity.class);
-        startActivity(i);
-    }
 }
 

@@ -27,7 +27,6 @@
         <activity android:name=".NewNoteOptionsActivity" />
         <activity android:name=".NoteTypeTextActivity" />
         <activity android:name=".NoteTypeDrawActivity" />
-        <activity android:name=".NoteTypeAudioActivity" />
         <activity android:name=".DrawingActivity" />
         <activity android:name=".NotesListActivity" />
         <activity android:name=".PasswordEnterActivity" />

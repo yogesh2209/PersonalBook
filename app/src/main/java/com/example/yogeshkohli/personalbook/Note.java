@@ -19,6 +19,7 @@ public class Note {
             // Default constructor required for calls to DataSnapshot.getValue(User.class)
         }
 
+        //constructor
         public Note(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
             this.chapterName = chapterName;
             this.noteContent = noteContent;

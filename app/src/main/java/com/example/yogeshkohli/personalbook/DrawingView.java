@@ -22,6 +22,9 @@ import java.io.IOException;
  * Created by yogeshkohli on 4/24/18.
  */
 
+
+/* Third Party Library code of drawing view */
+
 public class DrawingView extends View {
     private static final float TOUCH_TOLERANCE = 4;
     private Bitmap mBitmap;

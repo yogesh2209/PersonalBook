@@ -20,6 +20,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         updateUI();
     }
 
+    //toggle edit button - if view mode - hide and vice versa
     public void showOrHideEditButton(View editBtn,String indicator){
         if (indicator.matches("2")){
             editBtn.setVisibility(View.VISIBLE);
@@ -29,12 +30,13 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         }
     }
 
+    //edit button action here
     public void editNoteButtonClicked(View button) {
         //Take him to editing screen
        fireIntent();
     }
 
-    //Intent method
+    //Intent method - take him to editing screen
     public void fireIntent() {
         Intent i = new Intent(this, NoteEditScreenActivity.class);
         i.putExtra("password", getPasswordFromPreviousScreen());
@@ -56,6 +58,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
 
     /* Set data to textviews on the screen */
 
+    //setting chapter name
     public void setChapterName(String chapterName){
         if (chapterName != null) {
             TextView chapterNameTextView = (TextView)findViewById(R.id.textViewChapterNameNoteDetaiScreen);
@@ -66,6 +69,8 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
             chapterNameTextView.setText("Chapter name here");
         }
     }
+
+    //setting chapter content
     public void setChapterContent(String chapterContent){
         if (chapterContent != null) {
             TextView chapterContentTextView = (TextView)findViewById(R.id.textViewChapterContentNoteDetaiScreen);
@@ -77,6 +82,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         }
     }
 
+    //setting password
     public void setPasswordField(String passwordField){
         if (!passwordField.matches("")) {
             TextView passwordFieldTextView = (TextView)findViewById(R.id.textViewPasswordenabledNoteDetailScreen);
@@ -88,6 +94,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         }
     }
 
+    //setting date of the note
     public void setCurrentDate(String currentDate){
         if (currentDate != null) {
             TextView passwordFieldTextView = (TextView)findViewById(R.id.textViewDateNoteDetailScreen);
@@ -99,6 +106,7 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         }
     }
 
+    //setting note type - text / draw
     public void setNoteType(String noteType){
         if (noteType != null) {
             TextView noteTypeTextView = (TextView)findViewById(R.id.textViewNoteTypeNoteDetailScreen);

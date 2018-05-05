@@ -32,6 +32,7 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
         setListeners();
     }
 
+    /* Third Party Library code of drawing view */
     private void setListeners() {
         mSaveButton.setOnClickListener(this);
         mPenButton.setOnClickListener(this);
@@ -42,6 +43,7 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
         mEraserSeekbar.setOnSeekBarChangeListener(this);
     }
 
+    /* Third Party Library code of drawing view */
     private void initializeUI() {
         mDrawingView = (DrawingView) findViewById(R.id.scratch_pad);
         mSaveButton = (Button) findViewById(R.id.save_button);
@@ -53,6 +55,7 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
         mEraserSeekbar = (SeekBar) findViewById(R.id.eraser_size_seekbar);
     }
 
+    /* Third Party Library code of drawing view */
     @Override public void onClick(View view) {
         switch (view.getId()) {
             case R.id.save_button:
@@ -88,6 +91,7 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
+    /* Third Party Library code of drawing view */
     public void saveDrawingImage() {
         Random generator = new Random();
         int n = 10000;
@@ -97,6 +101,7 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
                 Bitmap.CompressFormat.PNG, 100);
     }
 
+    /* Third Party Library code of drawing view */
     @Override public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
         switch (seekBar.getId()) {
             case R.id.pen_size_seekbar:

@@ -36,6 +36,7 @@ public class NoteEditScreenActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
+    //checking if old entry deleted or not
     public Boolean isOldEntryDeleted(){
         //Get datasnapshot at your "users" root node
         DatabaseReference ref = mDatabase.child("notes");
@@ -46,10 +47,12 @@ public class NoteEditScreenActivity extends AppCompatActivity {
         return false;
     }
 
+    //updating firebase data
     public void updateFirebaseData(String noteID){
         writeNewNote(getEditTextTitle(), getEditTextNoteContent(), "Text", noteID, getEditTextPassword(), getCurrentDateTime());
     }
 
+    //writing new note
     public void writeNewNote(String chapterName, String noteContent, String noteType, String noteID, String password, String currentDate) {
         Note note = new Note(chapterName, noteContent, noteType, noteID, password, currentDate);
         mDatabase.child("notes").child(noteID).setValue(note);
@@ -57,12 +60,14 @@ public class NoteEditScreenActivity extends AppCompatActivity {
         fireIntent();
     }
 
+    //fire intent - take him back to home without creating new instance of it
     public void fireIntent(){
         Intent intent = new Intent(this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
+    //generating random note id
     public String generateRandomNoteID() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
@@ -118,6 +123,7 @@ public class NoteEditScreenActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    //validating form before updating firebase data
     public void validateForm(){
         if (getEditTextTitle().length() == 0 || getEditTextNoteContent().length() == 0){
             showToast(Constants.EMPTY_EDIT_TEXT);
@@ -132,6 +138,7 @@ public class NoteEditScreenActivity extends AppCompatActivity {
         }
     }
 
+    //getting current date time
     public String getCurrentDateTime() {
         ZoneId zoneId = ZoneId.of("America/Los_Angeles");
         LocalDateTime localTime= LocalDateTime.now(zoneId);
