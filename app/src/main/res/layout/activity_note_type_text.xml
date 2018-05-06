@@ -25,61 +25,68 @@
 
     <Button
         android:id="@+id/buttonSetReminder"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="111dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
         android:background="@drawable/button_bg_rounded_corners"
-        android:text="SET REMINDER"
         android:onClick="setReminderButtonClicked"
+        android:text="SET REMINDER"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonSaveNoteText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextContentChapter" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <EditText
         android:id="@+id/editTextContentChapter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="19dp"
         android:layout_marginStart="19dp"
         android:ems="10"
         android:hint="Content here*"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSetReminder"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="337dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginStart="23dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonSetReminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextContentChapter" />
 
     <Button
         android:id="@+id/buttonSaveNoteText"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="14dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
         android:background="@drawable/button_bg_rounded_corners"
-        android:text="SAVE"
         android:onClick="saveNoteTextTypeButtonClicked"
+        android:text="SAVE"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSetReminder" />
 
 </android.support.constraint.ConstraintLayout>

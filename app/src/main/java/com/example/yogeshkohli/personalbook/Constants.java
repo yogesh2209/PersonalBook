@@ -16,5 +16,8 @@ public class Constants {
     public static final String NO_SAVED_NOTES               = "No saved notes";
     public static final String EMPTY_PASSWORD               = "Password cannot be empty";
     public static final String PASSWORD_NOT_MATCHED_ERROR   = "Password does not match";
+    public static final String PERMISSION_GRANTE_ERROR      = "Permission not granted. Please go to settings->apps->My Book -> change permission";
+
+    public static final int PERMISSION_REQUEST_CODE = 1;
 
 }

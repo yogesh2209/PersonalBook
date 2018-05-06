@@ -1,32 +1,44 @@
 package com.example.yogeshkohli.personalbook;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class NoteDetailsScreenActivity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_details_screen);
         View editBtn = (Button) findViewById(R.id.buttonNoteDetailEditScreen);
-        showOrHideEditButton(editBtn, getStoredIndicator());
+        View deleteBtn = (Button) findViewById(R.id.buttonDelete);
+        showOrHideEditDeleteButton(editBtn, deleteBtn, getStoredIndicator());
         updateUI();
+        setupFirebase();
     }
 
-    //toggle edit button - if view mode - hide and vice versa
-    public void showOrHideEditButton(View editBtn,String indicator){
+    //toggle edit & delete button button - if view mode - hide and vice versa
+    public void showOrHideEditDeleteButton(View editBtn, View deleteBtn, String indicator){
         if (indicator.matches("2")){
             editBtn.setVisibility(View.VISIBLE);
+            deleteBtn.setVisibility(View.VISIBLE);
         }
         else{
             editBtn.setVisibility(View.GONE);
+            deleteBtn.setVisibility(View.GONE);
         }
     }
 
@@ -34,6 +46,54 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
     public void editNoteButtonClicked(View button) {
         //Take him to editing screen
        fireIntent();
+    }
+
+    public void setupFirebase(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+    }
+
+    public Boolean isNoteDeleted(){
+        //Get datasnapshot at your "users" root node
+        DatabaseReference ref = mDatabase.child("notes");
+        if (getNoteIdFromPreviousScreen() != null){
+            ref.child(getNoteIdFromPreviousScreen()).removeValue();
+            return true;
+        }
+        return false;
+    }
+
+    //Show toast
+    public void showToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    //delete button action here
+    public void deleteNoteButtonClicked(View button) {
+        //if note id is not null, then delete the data from firebase and take him to home screen
+        AlertDialog alertDialog = new AlertDialog.Builder(NoteDetailsScreenActivity.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Do you want to delete this note?");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //delete
+                        if (isNoteDeleted()) {
+                            //take him back to home
+                            backToHomeScreen();
+                        }
+                        else{
+                            //show toast of error
+                            showToast(Constants.SOMETHING_WRONG_MESSAGE);
+                        }
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 
     //Intent method - take him to editing screen
@@ -45,6 +105,13 @@ public class NoteDetailsScreenActivity extends AppCompatActivity {
         i.putExtra("content", getChapterContentFromPreviousScreen());
         i.putExtra("type", getNoteTypeFromPreviousScreen());
         startActivity(i);
+    }
+
+    //fire intent - take him back to home without creating new instance of it
+    public void backToHomeScreen(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
     }
 
     //Calling all set methods here

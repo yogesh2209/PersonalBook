@@ -1,5 +1,12 @@
 package com.example.yogeshkohli.personalbook;
 
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,6 +19,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
+
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
@@ -59,7 +68,20 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
     @Override public void onClick(View view) {
         switch (view.getId()) {
             case R.id.save_button:
-                saveDrawingImage();
+
+                 /* My code starts here */
+
+                requestPermission();
+
+                //Permission granted
+                if (isPermissionGranted()) {
+                    saveImage();
+                }
+                //show toast that permission denied
+                else{
+                    showToast(Constants.PERMISSION_GRANTE_ERROR);
+                }
+
                 break;
             case R.id.pen_button:
                 mDrawingView.initializePen();
@@ -91,15 +113,47 @@ public class DrawingActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
-    /* Third Party Library code of drawing view */
-    public void saveDrawingImage() {
+
+    public void saveImage(){
+        mDrawingView.saveImage(Environment.getExternalStorageDirectory().toString(), randomFileName(),
+                Bitmap.CompressFormat.PNG, 100);
+    }
+
+    //Show toast
+    public void showToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    //requsting permission to access storage - because of upper versions requesting permission way
+    public void requestPermission(){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(DrawingActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            Toast.makeText(DrawingActivity.this, "Write External Storage permission allows us to do store images. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
+        } else {
+            ActivityCompat.requestPermissions(DrawingActivity.this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, Constants.PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    //checking permissions - if permission granted return true else false
+    private boolean isPermissionGranted() {
+        int result = ContextCompat.checkSelfPermission(DrawingActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (result == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Code which generates random file name
+    public String randomFileName() {
         Random generator = new Random();
         int n = 10000;
         n = generator.nextInt(n);
-        String fname = "Image-"+ n +".png";
-        mDrawingView.saveImage(Environment.getExternalStorageDirectory().toString(), fname,
-                Bitmap.CompressFormat.PNG, 100);
+        String fname = "Image"+ n;
+
+        return fname;
     }
+
+    /* My code ends here */
 
     /* Third Party Library code of drawing view */
     @Override public void onProgressChanged(SeekBar seekBar, int i, boolean b) {

@@ -15,6 +15,7 @@ public class PasswordEnterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_enter);
+        setFocusOnPasswordEditText();
     }
 
     //Get Started Button Action
@@ -56,6 +57,12 @@ public class PasswordEnterActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    //Setting the focus to first name edit text
+    public void setFocusOnPasswordEditText() {
+        EditText titleEditText = (EditText) findViewById(R.id.editTextPasswordToUnlock);
+        titleEditText.requestFocus();
     }
 
     /* Getting all the data from previous screen */

@@ -13,6 +13,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -191,17 +192,16 @@ public class DrawingView extends View {
         return mPaint.getColor();
     }
 
-    public void loadImage(Bitmap bitmap) {
-        mBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
-        mCanvas = new Canvas(mBitmap);
-        bitmap.recycle();
-        invalidate();
+    //Show toast
+    public void showToast(String message){
+        Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     public boolean saveImage(String filePath, String filename, Bitmap.CompressFormat format,
                              int quality) {
         if (quality > 100) {
             Log.d("saveImage", "quality cannot be greater that 100");
+            showToast("quality problem");
             return false;
         }
         File file;
@@ -211,14 +211,18 @@ public class DrawingView extends View {
                 case PNG:
                     file = new File(filePath, filename + ".png");
                     out = new FileOutputStream(file);
+                    showToast("Image saved: " + file.toString());
                     return mBitmap.compress(Bitmap.CompressFormat.PNG, quality, out);
+
                 case JPEG:
                     file = new File(filePath, filename + ".jpg");
                     out = new FileOutputStream(file);
+                    showToast("Image saved: " + file.toString());
                     return mBitmap.compress(Bitmap.CompressFormat.JPEG, quality, out);
                 default:
                     file = new File(filePath, filename + ".png");
                     out = new FileOutputStream(file);
+                    showToast("Image saved: " + file.toString());
                     return mBitmap.compress(Bitmap.CompressFormat.PNG, quality, out);
             }
         } catch (Exception e) {

@@ -43,11 +43,11 @@
 
     <TextView
         android:id="@+id/textViewDateNoteDetailScreen"
-        android:layout_width="359dp"
-        android:layout_height="39dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="19dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginStart="22dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
         android:text="@string/textviewDateNoteDetail"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -58,11 +58,11 @@
 
     <TextView
         android:id="@+id/textViewPasswordenabledNoteDetailScreen"
-        android:layout_width="361dp"
-        android:layout_height="31dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="21dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginStart="21dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginStart="11dp"
         android:text="@string/textviewPswdNoteDetail"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -76,7 +76,6 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
         android:background="@drawable/button_bg_rounded_corners"
         android:onClick="editNoteButtonClicked"
@@ -85,17 +84,17 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNoteTypeNoteDetailScreen" />
 
     <TextView
         android:id="@+id/textViewNoteTypeNoteDetailScreen"
-        android:layout_width="367dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="49dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/textviewNoteTypeNoteDetail"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -103,4 +102,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPasswordenabledNoteDetailScreen" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/delete"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:onClick="deleteNoteButtonClicked"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonNoteDetailEditScreen" />
 </android.support.constraint.ConstraintLayout>

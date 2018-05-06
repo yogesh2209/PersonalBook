@@ -5,7 +5,7 @@
     <string name="get_started_title">Continue as Guest</string>
     <string name="about_personal_book">About</string>
     <string name="textviewAboutDetailsString"></string>
-    <string name="aboutAppMessage">This application is developed as a final project for Android development Class (Computer Science Department) which comes under Extended Studies - San Diego State University.\n\nThis app aims to provide a seamless experience in which user can create his/her personal notes.\n\nFEATURES:\n\n1. Create customised notes.\n2. Make them password protected.\n3. Edit / Update / Delete Notes.\n\n</string>
+    <string name="aboutAppMessage">This application is developed as a final project for Android development Class (Computer Science Department) which comes under Extended Studies - San Diego State University.\n\nThis app aims to provide a seamless experience in which user can create his/her personal notes.\n\nFEATURES:\n\n1. Create customised notes.\n2. Make them password protected.\n3. Edit / Update / Delete Notes.\n4. Save drawing as an image in internal storage.\n\n</string>
     <string name="helpTitle">Help</string>
     <string name="emailString">yogesh22kohli@gmail.com</string>
     <string name="contactString">Contact:</string>
@@ -34,4 +34,5 @@
     <string name="password_edit_screen">Password</string>
     <string name="update_edit_screen">UPDATE</string>
     <string name="content_here_edit_screen">Content here</string>
+    <string name="delete">DELETE</string>
 </resources>
